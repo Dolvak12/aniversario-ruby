@@ -4,8 +4,6 @@ body {
   justify-content: center;
   height: 100vh;
   background: #b784db;
-  margin: 0;
-  padding: 0;
 }
 
 .envelope {
@@ -13,7 +11,6 @@ body {
   cursor: pointer;
 }
 
-/* Back of envelope */
 .back {
   position: relative;
   width: 250px;
@@ -21,7 +18,6 @@ body {
   background: #6247aa;
 }
 
-/* Front part of the envelope */
 .front {
   position: absolute;
   border-right: 130px solid #815ac0;
@@ -31,7 +27,7 @@ body {
   width: 0;
   top: 0;
   left: 120px;
-  z-index: 3; /* On top initially */
+  z-index: 3;
 }
 .front:before {
   content: "";
@@ -56,7 +52,6 @@ body {
   left: -120px;
 }
 
-/* Top flap */
 .top {
   position: absolute;
   border-top: 105px solid #9163cb;
@@ -72,7 +67,6 @@ body {
   transform: rotateX(160deg);
 }
 
-/* The letter that contains the message */
 .letter {
   position: absolute;
   background: white;
@@ -82,19 +76,15 @@ body {
   left: 10px;
   transition: 0.2s;
 }
-
-/* When hovering, the letter moves up */
 .envelope:hover .letter {
   transform: translateY(-100px);
   z-index: 2;
 }
 
-/* Optional shadow */
 .shadow {
-  /* If desired, add shadow styling here */
+  /* Optional shadow styling */
 }
 
-/* Outside text */
 .text1 {
   position: absolute;
   color: white;
@@ -102,7 +92,6 @@ body {
   top: -50%;
 }
 
-/* Text inside the letter */
 .text {
   text-align: center;
   font-size: 11px;
@@ -115,7 +104,6 @@ body {
   left: 20px;
 }
 
-/* Animated heart */
 .heart {
   background-color: red;
   height: 70px;
@@ -158,49 +146,11 @@ body {
   border-radius: 50px;
 }
 
-/* === Rules to show the text/link only after opening the envelope === */
-/* When hovering over the envelope, the letter rises above .front */
+/* When hovering, the letter rises above .front */
 .envelope:hover .letter {
-  z-index: 4; /* Higher than .front */
+  z-index: 4;
 }
-
-/* And lower the z-index of .front so it won't block the text */
+/* And lower .front's z-index so it doesn't block the text */
 .envelope:hover .front {
   z-index: 1;
-}
-
-/* ===== Responsive adjustments for mobile ===== */
-@media (max-width: 600px) {
-  body {
-    height: auto;
-    padding: 20px;
-  }
-  .envelope {
-    width: 90%;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-  .back {
-    width: 100%;
-    height: auto;
-  }
-  .letter {
-    width: 90%;
-    left: 5%;
-    top: 5px;
-  }
-  .text {
-    font-size: 14px;
-    left: 5%;
-  }
-  .heart {
-    height: 50px;
-    width: 50px;
-  }
-  .front {
-    left: 60px;
-  }
-  .top {
-    left: 60px;
-  }
 }
