@@ -4,6 +4,8 @@ body {
   justify-content: center;
   height: 100vh;
   background: #b784db;
+  margin: 0;
+  padding: 0;
 }
 
 .envelope {
@@ -11,6 +13,7 @@ body {
   cursor: pointer;
 }
 
+/* Back of envelope */
 .back {
   position: relative;
   width: 250px;
@@ -86,12 +89,12 @@ body {
   z-index: 2;
 }
 
-/* Optional shadow of the envelope */
+/* Optional shadow */
 .shadow {
-  /* No styles added, but you can if you like */
+  /* If desired, add shadow styling here */
 }
 
-/* Text on the outside */
+/* Outside text */
 .text1 {
   position: absolute;
   color: white;
@@ -161,7 +164,43 @@ body {
   z-index: 4; /* Higher than .front */
 }
 
-/* And we lower the z-index of .front so it won't block the text */
+/* And lower the z-index of .front so it won't block the text */
 .envelope:hover .front {
   z-index: 1;
+}
+
+/* ===== Responsive adjustments for mobile ===== */
+@media (max-width: 600px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+  .envelope {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .back {
+    width: 100%;
+    height: auto;
+  }
+  .letter {
+    width: 90%;
+    left: 5%;
+    top: 5px;
+  }
+  .text {
+    font-size: 14px;
+    left: 5%;
+  }
+  .heart {
+    height: 50px;
+    width: 50px;
+  }
+  .front {
+    left: 60px;
+  }
+  .top {
+    left: 60px;
+  }
 }
